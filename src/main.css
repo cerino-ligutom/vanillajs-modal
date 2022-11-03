@@ -1,9 +1,14 @@
 :root {
 	--border-radius: 0.5rem;
+	--c-primary: #3abff8;
+	--c-success: #36d399;
+	--c-error: #f87272;
+	--c-foreground: #fff;
 }
 
 html {
 	font-size: 16px;
+	font-family: Inter, Helvetica, sans-serif;
 }
 
 html,
@@ -15,9 +20,93 @@ body {
 
 button {
 	border-radius: var(--border-radius);
-	margin: 8px;
-	padding: 8px 16px;
+	padding: 12px 20px;
+
+	background-color: var(--c-primary);
+	border: none;
 }
 button:hover {
 	cursor: pointer;
+}
+
+.main-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.main-page__message {
+	margin-top: 2rem;
+
+	transition: all 1s;
+}
+
+.modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+
+	animation: fadeIn 1s;
+}
+
+.modal__backdrop {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	padding: 1rem;
+	width: 50%;
+	position: relative;
+
+	border-radius: var(--border-radius);
+	background-color: var(--c-foreground);
+}
+
+.modal__content-message {
+	font-size: 1.5rem;
+}
+
+.modal__content-button-container {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.modal__content-btn {
+	min-width: 100px;
+}
+
+.modal__content-btn--success {
+	background-color: var(--c-success);
+}
+
+.modal__content-btn--danger {
+	background-color: var(--c-error);
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

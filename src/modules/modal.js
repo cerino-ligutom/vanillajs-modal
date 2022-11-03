@@ -40,6 +40,10 @@ function createModalContent(modalNode, { message, callback }) {
 	);
 
 	const yesButtonNode = document.createElement('button');
+	yesButtonNode.classList.add(
+		'modal__content-btn',
+		'modal__content-btn--success'
+	);
 	yesButtonNode.textContent = 'Yes';
 	yesButtonNode.addEventListener('click', () => {
 		callback(true);
@@ -47,6 +51,10 @@ function createModalContent(modalNode, { message, callback }) {
 	});
 
 	const cancelButtonNode = document.createElement('button');
+	cancelButtonNode.classList.add(
+		'modal__content-btn',
+		'modal__content-btn--danger'
+	);
 	cancelButtonNode.textContent = 'Cancel';
 	cancelButtonNode.addEventListener('click', () => {
 		callback(false);
