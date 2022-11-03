@@ -39,6 +39,8 @@ button:hover {
 
 .main-page__message {
 	margin-top: 2rem;
+	font-size: 2rem;
+	font-weight: bold;
 
 	transition: all 1s;
 }
